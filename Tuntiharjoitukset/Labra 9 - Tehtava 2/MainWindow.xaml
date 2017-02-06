@@ -1,0 +1,28 @@
+﻿<Window x:Class="Labra_9___Tehtava_2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Labra_9___Tehtava_2"
+        mc:Ignorable="d"
+        Title="Euro/markka -laskuri" Height="350" Width="525">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFB9E2FF" Offset="0.267"/>
+                <GradientStop Color="#FF5C55E8" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <TextBox x:Name="muunnaMarkoiksi" HorizontalAlignment="Left" Height="41" Margin="31,124,0,0" TextWrapping="Wrap" FontSize="25" VerticalAlignment="Top" Width="60" BorderThickness="1" Text="" Background="{x:Null}" BorderBrush="Black" Foreground="Black" SelectionBrush="#FF004F8D"/>
+        <TextBox x:Name="muunnaEuroiksi" HorizontalAlignment="Left" Height="41" Margin="31,201,0,0" TextWrapping="Wrap" FontSize="25" VerticalAlignment="Top" Width="60" BorderThickness="1" Text="" Background="{x:Null}" Foreground="Black" BorderBrush="Black" SelectionBrush="#FF004F8D"/>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Height="41" Margin="107,124,0,0" TextWrapping="Wrap" FontSize="25" Text="euroa" VerticalAlignment="Top" Width="98"/>
+        <TextBlock x:Name="textBlock1_Copy" HorizontalAlignment="Left" Height="41" Margin="106,201,0,0" TextWrapping="Wrap" FontSize="25" Text="markkaa" VerticalAlignment="Top" Width="120"/>
+        <TextBlock x:Name="muunnettuMarkka" HorizontalAlignment="Left" Margin="289,124,0,0" TextWrapping="Wrap" FontSize="25" Text="x" VerticalAlignment="Top"/>
+        <TextBlock x:Name="muunnettuEuro" HorizontalAlignment="Left" Margin="289,201,0,0" TextWrapping="Wrap" FontSize="25" Text="x" VerticalAlignment="Top"/>
+        <TextBlock x:Name="textBlock1_Copy1" HorizontalAlignment="Left" Height="41" Margin="358,124,0,0" TextWrapping="Wrap" FontSize="25" Text="markkaa" VerticalAlignment="Top" Width="157"/>
+        <TextBlock x:Name="textBlock1_Copy2" HorizontalAlignment="Left" Height="41" Margin="358,201,0,0" TextWrapping="Wrap" FontSize="25" Text="euroa" VerticalAlignment="Top" Width="157"/>
+        <Button x:Name="button" Content="-->" HorizontalAlignment="Left" Margin="216,124,0,0" VerticalAlignment="Top" Width="45" Height="38" Click="button_Click"/>
+        <Button x:Name="button_Copy" Content="-->" HorizontalAlignment="Left" Margin="216,201,0,0" VerticalAlignment="Top" Width="45" Height="38" Click="button_Copy_Click"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="47" Margin="87,32,0,0" TextWrapping="Wrap" FontSize="25" Text="EURO / MARKKAMUUNNIN" VerticalAlignment="Top" Width="352"/>
+    </Grid>
+</Window>

@@ -1,5 +1,5 @@
 ﻿/* **************************************
-Tuntitehtäviä.
+Tuntitehtäviä, WPF harjoittelua.
 
 Luotu 6.2.2017
 
@@ -45,7 +45,6 @@ namespace Labra_9___Tehtava_1
             i++;
             teksti = i.ToString();
             textBlock.Text = teksti;
-            //MessageBox.Show("Hello " + textBox.Text, "VIRUS ATTACK! Copying files ...");
         }
 
         private void button_Copy_Click(object sender, RoutedEventArgs e)
@@ -53,18 +52,10 @@ namespace Labra_9___Tehtava_1
             j++;
             teksti = j.ToString();
             textBlock_Copy.Text = teksti;
-            //MessageBox.Show("Hello " + textBox.Text, "VIRUS ATTACK! Copying files ...");
         }
         private void Grid_ContextMenuClosing(object sender, ContextMenuEventArgs e)
         {
 
         }
-
-    //    private void button_Copy_Click(object sender, RoutedEventArgs e)
-    //    {   // Kutsutaan näkyviin About -niminen ikkuna
-    //        About aboutWin = new About();           // Tehdään uusi olio
-    //        //aboutWin.ShowDialog();                  // Huom. tämä on modaalinen ikkuna = pääikkunalle ei voi tehdä mitään ennen kuin tämän sulkee
-    //        aboutWin.Show();                        // Ikkunoiden välillä voi siirtyä vapaasti sulkematta ensin
-    //    }
     }
 }
