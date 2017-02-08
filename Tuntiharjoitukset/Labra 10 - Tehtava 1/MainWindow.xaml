@@ -1,0 +1,31 @@
+﻿<Window x:Class="Labra_10___Tehtava_1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Labra_10___Tehtava_1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="370" Width="300" >
+    <Grid>
+        <StackPanel Background="#FFF1C5E1">
+            <StackPanel HorizontalAlignment="Center" Height="270" Width="240" Margin="0,25" Background="#FFFBE4F3">
+                <TextBlock x:Name="txbOtsikko" TextWrapping="Wrap" Text="Mitä ostetaan?" Width="222" FontSize="25" TextDecorations="{x:Null}" FontStyle="Italic" FontFamily="Script MT Bold"/>
+                <CheckBox x:Name="chkSuklaa" Content="Suklaa" Margin="10,10,0,0"/>
+                <CheckBox x:Name="chkPitsa" Content="Pitsa" Margin="10,10,0,0"/>
+                <CheckBox x:Name="chkSidu" Content="Siideri" Margin="10,10,0,0"/>
+                <CheckBox x:Name="chkKana" Content="Kanafilee" Margin="10,10,0,0"/>
+                <CheckBox x:Name="chkLimppa" Content="Limppari" Margin="10,10,0,0"/>
+                <Button x:Name="btnOsta" Content="Osta" Width="42" HorizontalAlignment="Left" Margin="10,20,0,0" Click="btnOsta_Click"/>
+                <TextBlock x:Name="txbOstoslista" TextWrapping="Wrap" Text="Ostoslista:" Margin="10,10,0,0" Height="20" Width="100" HorizontalAlignment="Left"/>
+                <TextBlock x:Name="txbKooste" TextWrapping="Wrap" Text="..." Margin="10,0,0,0" Height="40" Width="220" HorizontalAlignment="Left" Background="#FFF9EDF5"/>
+            </StackPanel>
+        </StackPanel>
+        <DockPanel VerticalAlignment="Bottom">
+            <StatusBar>
+                <StatusBarItem Height="20">
+                    <TextBlock x:Name="txbFooter" Text="Lisää haluamasi ostokset klikkaamalla." FontSize="12"/>
+                </StatusBarItem>
+            </StatusBar>
+        </DockPanel>
+    </Grid>
+</Window>

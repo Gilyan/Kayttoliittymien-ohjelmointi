@@ -1,5 +1,5 @@
 ﻿/* **************************************
-Tuntitehtäviä, WPF harjoittelua.
+Tuntiharjoitus, tehty yhdessä opettajan kanssa.
 
 Luotu 8.2.2017
 
