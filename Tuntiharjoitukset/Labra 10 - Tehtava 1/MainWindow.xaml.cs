@@ -36,10 +36,10 @@ namespace Labra_10___Tehtava_1
             InitializeComponent();
         }
 
-        List<string> ostokset = new List<string>();     // Lista ostoksille
-
         private void btnOsta_Click(object sender, RoutedEventArgs e)
         {
+            List<string> ostokset = new List<string>();     // Lista ostoksille
+
             try
             {
                 if ((bool)chkSuklaa.IsChecked)          // Tarkistetaan, mitä kaikkea on valittu
