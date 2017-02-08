@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Labra_10___Tehtava_1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="370" Width="300" >
+        Title="Ostoslista-harjoitustehtävä" Height="370" Width="300" >
     <Grid>
         <StackPanel Background="#FFF1C5E1">
             <StackPanel HorizontalAlignment="Center" Height="270" Width="240" Margin="0,25" Background="#FFFBE4F3">

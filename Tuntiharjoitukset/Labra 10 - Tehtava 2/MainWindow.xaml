@@ -1,0 +1,36 @@
+﻿<Window x:Class="Labra_10___Tehtava_2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Labra_10___Tehtava_2"
+        mc:Ignorable="d"
+        Title="Login-harjoitustehtävä" Height="350" Width="500">
+    <Grid>
+        <Grid Height="100" Width="200" Background="#FFB9DBF1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="txbLogin" Grid.Row="0" Grid.Column="0" Text="Login:" Margin="5" Height="20"/>
+            <!--<TextBlock x:Name="txbLogin" HorizontalAlignment="Left" Margin="5,5,0,5" TextWrapping="Wrap" Text="Login:" VerticalAlignment="Bottom" Height="20" Width="40"/>-->
+            <TextBlock x:Name="txbPasswd" Grid.Row="1" Grid.Column="0" Text="Password:" Margin="5" Height="20"/>
+            <Button x:Name="btnLogin" Content="Login" Grid.Row="2" Grid.Column="1" Margin="5"  Width="40" Height="20" Background="#FFA6AEB9" BorderThickness="0" Click="btnLogin_Click" HorizontalAlignment="Left"/>
+            <TextBox x:Name="txtLogin" Grid.ColumnSpan="2" Grid.Row="0" Grid.Column="1" Height="20" Margin="5" Text="" Width="123" Background="#FFE7EFFB"/>
+            <TextBox x:Name="txtPasswd" Grid.ColumnSpan="2" Grid.Row="1" Grid.Column="1" Height="20" Margin="5" Text="" Width="123" Background="#FFE7EFFB"/>
+        </Grid>
+        <DockPanel VerticalAlignment="Bottom">
+            <StatusBar>
+                <StatusBarItem Height="20">
+                    <TextBlock x:Name="txbFooter" Text="Kaunis päivä tänään." FontSize="12"/>
+                </StatusBarItem>
+            </StatusBar>
+        </DockPanel>
+    </Grid>
+</Window>
