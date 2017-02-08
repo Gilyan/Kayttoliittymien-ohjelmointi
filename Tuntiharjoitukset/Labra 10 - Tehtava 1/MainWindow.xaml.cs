@@ -36,46 +36,45 @@ namespace Labra_10___Tehtava_1
             InitializeComponent();
         }
 
-        string[] ostokset = { "" };
-        int i = 0;
+        List<string> ostokset = new List<string>();     // Lista ostoksille
 
         private void btnOsta_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                if ((bool)chkSuklaa.IsChecked)
+                if ((bool)chkSuklaa.IsChecked)          // Tarkistetaan, mitä kaikkea on valittu
                 {
-                    ostokset[i] = "suklaa";
-                    i++;
+                    ostokset.Add("suklaa");
                 }
 
                 if ((bool)chkPitsa.IsChecked)
                 {
-                    ostokset[i] = "pitsa";
-                    i++;
+                    ostokset.Add("pitsa");
                 }
 
                 if ((bool)chkSidu.IsChecked)
                 {
-                    ostokset[i] = "siideri";
-                    i++;
+                    ostokset.Add("siideri");
                 }
 
                 if ((bool)chkKana.IsChecked)
                 {
-                    ostokset[i] = "kana";
-                    i++;
+                    ostokset.Add("kanafilee");
                 }
 
                 if ((bool)chkLimppa.IsChecked)
                 {
-                    ostokset[i] = "limppari";
-                    i++;
+                    ostokset.Add("limppari");
                 }
 
-                for (int j = 0; j <= ostokset.Length; j++)
+                foreach (string k in ostokset)
                 {
-                    Console.Write(ostokset[j] + ", ");
+                    txbKooste.Text = string.Join(", ", ostokset);   // Tulostetaan valitut tuotteet textboxiin
+                }
+
+                if (ostokset.Count != 0)
+                {
+                    txbFooter.Text = "Valitut tuotteet lisätty";    // Muutetaan footerin teksti
                 }
             }
 

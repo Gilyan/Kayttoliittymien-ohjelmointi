@@ -17,7 +17,7 @@
                 <CheckBox x:Name="chkLimppa" Content="Limppari" Margin="10,10,0,0"/>
                 <Button x:Name="btnOsta" Content="Osta" Width="42" HorizontalAlignment="Left" Margin="10,20,0,0" Click="btnOsta_Click"/>
                 <TextBlock x:Name="txbOstoslista" TextWrapping="Wrap" Text="Ostoslista:" Margin="10,10,0,0" Height="20" Width="100" HorizontalAlignment="Left"/>
-                <TextBlock x:Name="txbKooste" TextWrapping="Wrap" Text="..." Margin="10,0,0,0" Height="40" Width="220" HorizontalAlignment="Left" Background="#FFF9EDF5"/>
+                <TextBlock x:Name="txbKooste" TextWrapping="Wrap" Text="" Margin="10,0,0,0" Height="40" Width="220" HorizontalAlignment="Left" Background="#FFF9EDF5"/>
             </StackPanel>
         </StackPanel>
         <DockPanel VerticalAlignment="Bottom">
