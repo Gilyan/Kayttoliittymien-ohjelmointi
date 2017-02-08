@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Labra_9___Tehtava_3"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Ikkunalaskuri" Height="350" Width="525">
     <Grid Background="#FFD6D7F0">
         <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="211,39,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="59,41,0,0" TextWrapping="Wrap" Text="Ikkunan leveys (mm)" VerticalAlignment="Top" Height="23" Width="142"/>
