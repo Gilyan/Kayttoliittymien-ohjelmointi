@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Labra 10 - tuntiharjoitus 2
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Labra 10 - Tehtava 2", "Labra 10 - Tehtava 2\Labra 10 - Tehtava 2.csproj", "{6BCD6FDE-0A6D-4C92-BE0D-2250A7A1D989}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Labra 10 - Tehtava 3", "Labra 10 - Tehtava 3\Labra 10 - Tehtava 3.csproj", "{BCAD1D79-B656-41FC-984C-B5A0E2F2B14C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -141,6 +143,22 @@ Global
 		{6BCD6FDE-0A6D-4C92-BE0D-2250A7A1D989}.Release|x64.Build.0 = Release|Any CPU
 		{6BCD6FDE-0A6D-4C92-BE0D-2250A7A1D989}.Release|x86.ActiveCfg = Release|Any CPU
 		{6BCD6FDE-0A6D-4C92-BE0D-2250A7A1D989}.Release|x86.Build.0 = Release|Any CPU
+		{BCAD1D79-B656-41FC-984C-B5A0E2F2B14C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCAD1D79-B656-41FC-984C-B5A0E2F2B14C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCAD1D79-B656-41FC-984C-B5A0E2F2B14C}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{BCAD1D79-B656-41FC-984C-B5A0E2F2B14C}.Debug|ARM.Build.0 = Debug|Any CPU
+		{BCAD1D79-B656-41FC-984C-B5A0E2F2B14C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{BCAD1D79-B656-41FC-984C-B5A0E2F2B14C}.Debug|x64.Build.0 = Debug|Any CPU
+		{BCAD1D79-B656-41FC-984C-B5A0E2F2B14C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BCAD1D79-B656-41FC-984C-B5A0E2F2B14C}.Debug|x86.Build.0 = Debug|Any CPU
+		{BCAD1D79-B656-41FC-984C-B5A0E2F2B14C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCAD1D79-B656-41FC-984C-B5A0E2F2B14C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCAD1D79-B656-41FC-984C-B5A0E2F2B14C}.Release|ARM.ActiveCfg = Release|Any CPU
+		{BCAD1D79-B656-41FC-984C-B5A0E2F2B14C}.Release|ARM.Build.0 = Release|Any CPU
+		{BCAD1D79-B656-41FC-984C-B5A0E2F2B14C}.Release|x64.ActiveCfg = Release|Any CPU
+		{BCAD1D79-B656-41FC-984C-B5A0E2F2B14C}.Release|x64.Build.0 = Release|Any CPU
+		{BCAD1D79-B656-41FC-984C-B5A0E2F2B14C}.Release|x86.ActiveCfg = Release|Any CPU
+		{BCAD1D79-B656-41FC-984C-B5A0E2F2B14C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
