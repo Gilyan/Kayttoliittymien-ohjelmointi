@@ -55,141 +55,158 @@ namespace Labra_10___Tehtava_3
 
         private void btnNollaa_Click(object sender, RoutedEventArgs e)          // Nollaa kaikki arvot
         {
-            txtRivit.Text = "";
-            txbArvotutRivit.Text = "";
-            numerot = new List<int>();
-            rivit = new List<string>();
-            rivi = "";
-            tulosta = "";
+            try
+            {
+                txtRivit.Text = "";
+                txbArvotutRivit.Text = "";
+                numerot = new List<int>();
+                rivit = new List<string>();
+                rivi = "";
+                tulosta = "";
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         private void btnArvoNumerot_Click(object sender, RoutedEventArgs e)     // Arpoo valittujen valintojen mukaan numeroita
         {
-            maara = Int32.Parse(txtRivit.Text);             // Kuinka monta riviä lottoa halutaan
-
-            if (cmbValikko.Text == "Lotto")                 // Lotto: suurin numero 39 ja arvotaan 7 numeroa riviin
+            try
             {
-                while (r <= maara)                          // Tehdään niin monta riviä, kuin on haluttu
+                maara = Int32.Parse(txtRivit.Text);             // Kuinka monta riviä lottoa halutaan
+
+                if (cmbValikko.Text == "Lotto")                 // Lotto: suurin numero 39 ja arvotaan 7 numeroa riviin
                 {
-                    while (i < 7)                           // Arvotaan 7 numeroa
+                    while (r <= maara)                          // Tehdään niin monta riviä, kuin on haluttu
                     {
-                        numero = number.ArvoLotto();
-
-                        if (!numerot.Contains(numero))      // Jos arvottu numero ei vielä löydy taulukosta
+                        while (i < 7)                           // Arvotaan 7 numeroa
                         {
-                            numerot.Add(numero);            // Lisätään numero listaan
-                            i++;
-                        }
+                            numero = number.ArvoLotto();
 
-                        rivi = "Rivi " + r + " : ";
-                        foreach (int nro in numerot)
-                        {
-                            rivi += nro + "  ";
+                            if (!numerot.Contains(numero))      // Jos arvottu numero ei vielä löydy taulukosta
+                            {
+                                numerot.Add(numero);            // Lisätään numero listaan
+                                i++;
+                            }
+                            numerot.Sort();                     // Järjestetään numerot
+                            rivi = "Rivi " + r + " : ";
+                            foreach (int nro in numerot)
+                            {
+                                rivi += nro + "  ";
+                            }
+                            rivi = rivi + "\n";
                         }
-                        rivi = rivi + "\n";
+                        numerot = new List<int>();              // Alustetaan numerolista
+                        i = 0;                                  // Nollataan numerolaskuri
+                        rivit.Add(rivi);                        // Lisätään rivi listaan
+                        r++;
                     }
-                    numerot = new List<int>();              // Alustetaan numerolista
-                    i = 0;                                  // Nollataan numerolaskuri
-                    rivit.Add(rivi);                        // Lisätään rivi listaan
-                    r++;
+
+                    foreach (string line in rivit)
+                    {
+                        tulosta += line;
+                    }
+                    txbArvotutRivit.Text = tulosta;
+                    r = 1;
                 }
 
-                foreach (string line in rivit)
+                else if (cmbValikko.Text == "Euro Jackpot")     // Eurojackpot: suurin numero 50 ja arvotaan 5 numeroa ja 2 tähtinumeroa (1-10) riviin
                 {
-                    tulosta += line;
+                    while (r <= maara)                          // Tehdään niin monta riviä, kuin on haluttu
+                    {
+                        while (i < 5)                           // Arvotaan 5 numeroa
+                        {
+                            numero = number.ArvoEuroJackpot();
+
+                            if (!numerot.Contains(numero))      // Jos arvottu numero ei vielä löydy taulukosta
+                            {
+                                numerot.Add(numero);            // Lisätään numero listaan
+                                i++;
+                            }
+                            numerot.Sort();                     // Järjestetään numerot, ei kuitenkaan tähtinumeroita jotta ne jäävät viimeiseksi
+                            rivi = "Rivi " + r + " : ";
+                            foreach (int nro in numerot)
+                            {
+                                rivi += nro + "  ";
+                            }
+                            rivi = rivi + "\n";
+                        }
+
+                        while (h < 2)                           // Arvotaan 2 tähtinumeroa
+                        {
+                            numero = number.ArvoEuroJackpotTahti();
+
+                            if (!numerot.Contains(numero))      // Jos arvottu numero ei vielä löydy taulukosta
+                            {
+                                numerot.Add(numero);            // Lisätään numero listaan
+                                h++;
+                            }
+
+                            rivi = "Rivi " + r + " : ";
+                            foreach (int nro in numerot)
+                            {
+                                rivi += nro + "  ";
+                            }
+                            rivi = rivi + "\n";
+                        }
+
+                        numerot = new List<int>();              // Alustetaan numerolista
+                        i = 0;
+                        h = 0;                                  // Nollataan numerolaskurit
+                        rivit.Add(rivi);                        // Lisätään rivi listaan
+                        r++;
+                    }
+
+                    foreach (string line in rivit)
+                    {
+                        tulosta += line;
+                    }
+                    txbArvotutRivit.Text = tulosta;
+                    r = 1;
                 }
-                txbArvotutRivit.Text = tulosta;
-                r = 1;
+
+                else if (cmbValikko.Text == "Viking Lotto")     // Viking Lotto: suurin numero 48 ja arvotaan 6 numeroa riviin
+                {
+                    while (r <= maara)                          // Tehdään niin monta riviä, kuin on haluttu
+                    {
+                        while (i < 6)                           // Arvotaan 6 numeroa
+                        {
+                            numero = number.ArvoVikingLotto();
+
+                            if (!numerot.Contains(numero))      // Jos arvottu numero ei vielä löydy taulukosta
+                            {
+                                numerot.Add(numero);            // Lisätään numero listaan
+                                i++;
+                            }
+                            numerot.Sort();                     // Järjestetään numerot
+                            rivi = "Rivi " + r + " : ";
+                            foreach (int nro in numerot)
+                            {
+                                rivi += nro + "  ";
+                            }
+                            rivi = rivi + "\n";
+                        }
+                        numerot = new List<int>();              // Alustetaan numerolista
+                        i = 0;                                  // Nollataan numerolaskuri
+                        rivit.Add(rivi);                        // Lisätään rivi listaan
+                        r++;
+                    }
+
+                    foreach (string line in rivit)
+                    {
+                        tulosta += line;
+                    }
+                    txbArvotutRivit.Text = tulosta;
+                    r = 1;
+                }
+
             }
 
-            else if (cmbValikko.Text == "Euro Jackpot")     // Eurojackpot: suurin numero 50 ja arvotaan 5 numeroa ja 2 tähtinumeroa (1-10) riviin
+            catch (Exception ex)
             {
-                while (r <= maara)                          // Tehdään niin monta riviä, kuin on haluttu
-                {
-                    while (i < 5)                           // Arvotaan 5 numeroa
-                    {
-                        numero = number.ArvoEuroJackpot();
-
-                        if (!numerot.Contains(numero))      // Jos arvottu numero ei vielä löydy taulukosta
-                        {
-                            numerot.Add(numero);            // Lisätään numero listaan
-                            i++;
-                        }
-
-                        rivi = "Rivi " + r + " : ";
-                        foreach (int nro in numerot)
-                        {
-                            rivi += nro + "  ";
-                        }
-                        rivi = rivi + "\n";
-                    }
-
-                    while (h < 2)                           // Arvotaan 2 tähtinumeroa
-                    {
-                        numero = number.ArvoEuroJackpotTahti();
-
-                        if (!numerot.Contains(numero))      // Jos arvottu numero ei vielä löydy taulukosta
-                        {
-                            numerot.Add(numero);            // Lisätään numero listaan
-                            h++;
-                        }
-
-                        rivi = "Rivi " + r + " : ";
-                        foreach (int nro in numerot)
-                        {
-                            rivi += nro + "  ";
-                        }
-                        rivi = rivi + "\n";
-                    }
-
-                    numerot = new List<int>();              // Alustetaan numerolista
-                    i = 0;
-                    h = 0;                                  // Nollataan numerolaskurit
-                    rivit.Add(rivi);                        // Lisätään rivi listaan
-                    r++;
-                }
-
-                foreach (string line in rivit)
-                {
-                    tulosta += line;
-                }
-                txbArvotutRivit.Text = tulosta;
-                r = 1;
-            }
-
-            else if (cmbValikko.Text == "Viking Lotto")     // Viking Lotto: suurin numero 48 ja arvotaan 6 numeroa riviin
-            {
-                while (r <= maara)                          // Tehdään niin monta riviä, kuin on haluttu
-                {
-                    while (i < 6)                           // Arvotaan 6 numeroa
-                    {
-                        numero = number.ArvoVikingLotto();
-
-                        if (!numerot.Contains(numero))      // Jos arvottu numero ei vielä löydy taulukosta
-                        {
-                            numerot.Add(numero);            // Lisätään numero listaan
-                            i++;
-                        }
-
-                        rivi = "Rivi " + r + " : ";
-                        foreach (int nro in numerot)
-                        {
-                            rivi += nro + "  ";
-                        }
-                        rivi = rivi + "\n";
-                    }
-                    numerot = new List<int>();              // Alustetaan numerolista
-                    i = 0;                                  // Nollataan numerolaskuri
-                    rivit.Add(rivi);                        // Lisätään rivi listaan
-                    r++;
-                }
-
-                foreach (string line in rivit)
-                {
-                    tulosta += line;
-                }
-                txbArvotutRivit.Text = tulosta;
-                r = 1;
+                Console.WriteLine(ex.Message);
             }
         }
     }
