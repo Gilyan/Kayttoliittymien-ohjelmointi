@@ -46,5 +46,112 @@ namespace Labra_10___Tehtava_4
         {
             InitializeComponent();
         }
+
+        string teksti = "";
+
+        Heater kiuas = new Heater();
+
+        private void btn1_Click(object sender, RoutedEventArgs e)
+        {
+            teksti += "1";
+            txbValue.Text = teksti;
+        }
+
+        private void btn2_Click(object sender, RoutedEventArgs e)
+        {
+            teksti += "2";
+            txbValue.Text = teksti;
+        }
+
+        private void btn3_Click(object sender, RoutedEventArgs e)
+        {
+            teksti += "3";
+            txbValue.Text = teksti;
+        }
+
+        private void btn4_Click(object sender, RoutedEventArgs e)
+        {
+            teksti += "4";
+            txbValue.Text = teksti;
+        }
+
+        private void btn5_Click(object sender, RoutedEventArgs e)
+        {
+            teksti += "5";
+            txbValue.Text = teksti;
+        }
+
+        private void btn6_Click(object sender, RoutedEventArgs e)
+        {
+            teksti += "6";
+            txbValue.Text = teksti;
+        }
+
+        private void btn7_Click(object sender, RoutedEventArgs e)
+        {
+            teksti += "7";
+            txbValue.Text = teksti;
+        }
+
+        private void btn8_Click(object sender, RoutedEventArgs e)
+        {
+            teksti += "8";
+            txbValue.Text = teksti;
+        }
+
+        private void btn9_Click(object sender, RoutedEventArgs e)
+        {
+            teksti += "9";
+            txbValue.Text = teksti;
+        }
+
+        private void btn0_Click(object sender, RoutedEventArgs e)
+        {
+            teksti += "0";
+            txbValue.Text = teksti;
+        }
+
+        private void btnDot_Click(object sender, RoutedEventArgs e)
+        {
+            teksti += ".";
+            txbValue.Text = teksti;
+        }
+
+        private void btnDel_Click(object sender, RoutedEventArgs e)
+        {
+            if (teksti.Length > 0)
+            { teksti = teksti.Substring(0, teksti.Length - 1); }
+            txbValue.Text = teksti;
+        }
+
+        private void btnOk_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (rdbTemperature.IsChecked == true)       // Lämpötila
+                {
+                    txbValue.Text = "";
+                    kiuas.Temperature = Convert.ToDouble(teksti);
+                    txbTemperature.Text = "Temperature:   " + kiuas.Temperature;
+                    txbInfo.Text = kiuas.Info;
+                    teksti = "";
+                }
+
+
+                else if (rdbHumidity.IsChecked == true)     // Kosteus
+                {
+                    txbValue.Text = "";
+                    kiuas.Humidity = Convert.ToDouble(teksti);
+                    txbHumidity.Text = "Humidity:   " + kiuas.Humidity;
+                    txbInfo.Text = kiuas.Info;
+                    teksti = "";
+                }
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
     }
 }

@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Heater Ultimatum -harjoitus" Height="350" Width="525">
     <Grid Background="#FFE5E2F9">
-        <Grid Margin="55,99,240,31">
+        <Grid Margin="51,80,244,44">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
@@ -21,26 +21,26 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Button x:Name="btn1" Content="1" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="35" Height="25"/>
-            <Button x:Name="btn2" Content="2" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="35" Height="25" Grid.Column="1"/>
-            <Button x:Name="btn3" Content="3" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="35" Height="25" Grid.Column="2"/>
-            <Button x:Name="btn4" Content="4" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="36" Height="25" Grid.Row="1"/>
-            <Button x:Name="btn5" Content="5" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="35" Height="25" Grid.Column="1" Grid.Row="1"/>
-            <Button x:Name="btn6" Content="6" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="35" Height="25" Grid.Column="2" Grid.Row="1"/>
-            <Button x:Name="btn7" Content="7" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="35" Height="25" Grid.Row="2"/>
-            <Button x:Name="btn8" Content="8" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="35" Height="25" Grid.Column="1" Grid.Row="2"/>
-            <Button x:Name="btn9" Content="9" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="35" Height="25" Grid.Column="2" Grid.Row="2"/>
-            <Button x:Name="btn0" Content="0" HorizontalAlignment="Center" Margin="6,5" VerticalAlignment="Center" Width="90" Height="25" Grid.Row="3" Grid.ColumnSpan="2"/>
-            <Button x:Name="btnDel" Content="DEL" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="35" Height="25" Grid.Column="3"/>
-            <Button x:Name="btnDot" Content="." HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="35" Height="25" Grid.Column="2" Grid.Row="3"/>
-            <Button x:Name="btnOk" Content="OK" HorizontalAlignment="Center" Margin="6,4,6,5" VerticalAlignment="Center" Width="35" Height="101" Grid.Column="3" Grid.Row="1" Grid.RowSpan="3"/>
-            <RadioButton x:Name="rdbTemperature" Content="Temperature" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="4" VerticalAlignment="Center" Grid.ColumnSpan="2" Width="90" Height="20" FontSize="10"/>
-            <RadioButton x:Name="rdbHumidity" Content="Humidity" Grid.Column="2" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="4" VerticalAlignment="Center" Width="90" Height="20" FontSize="10" Grid.ColumnSpan="2"/>
+            <Button x:Name="btn1" Content="1" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="35" Height="25" Click="btn1_Click"/>
+            <Button x:Name="btn2" Content="2" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="35" Height="25" Grid.Column="1" Click="btn2_Click"/>
+            <Button x:Name="btn3" Content="3" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="35" Height="25" Grid.Column="2" Click="btn3_Click"/>
+            <Button x:Name="btn4" Content="4" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="36" Height="25" Grid.Row="1" Click="btn4_Click"/>
+            <Button x:Name="btn5" Content="5" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="35" Height="25" Grid.Column="1" Grid.Row="1" Click="btn5_Click"/>
+            <Button x:Name="btn6" Content="6" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="35" Height="25" Grid.Column="2" Grid.Row="1" Click="btn6_Click"/>
+            <Button x:Name="btn7" Content="7" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="35" Height="25" Grid.Row="2" Click="btn7_Click"/>
+            <Button x:Name="btn8" Content="8" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="35" Height="25" Grid.Column="1" Grid.Row="2" Click="btn8_Click"/>
+            <Button x:Name="btn9" Content="9" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="35" Height="25" Grid.Column="2" Grid.Row="2" Click="btn9_Click"/>
+            <Button x:Name="btn0" Content="0" HorizontalAlignment="Center" Margin="6,5" VerticalAlignment="Center" Width="90" Height="25" Grid.Row="3" Grid.ColumnSpan="2" Click="btn0_Click"/>
+            <Button x:Name="btnDel" Content="DEL" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="35" Height="25" Grid.Column="3" Click="btnDel_Click"/>
+            <Button x:Name="btnDot" Content="." HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="35" Height="25" Grid.Column="2" Grid.Row="3" Click="btnDot_Click"/>
+            <Button x:Name="btnOk" Content="OK" HorizontalAlignment="Center" Margin="6,4,6,5" VerticalAlignment="Center" Width="35" Height="100" Grid.Column="3" Grid.Row="1" Grid.RowSpan="3" Click="btnOk_Click"/>
+            <RadioButton x:Name="rdbTemperature" Content="Temperature" HorizontalAlignment="Left" Margin="10,5,0,0" Grid.Row="4" VerticalAlignment="Center" Grid.ColumnSpan="2" Width="90" Height="20" FontSize="10"/>
+            <RadioButton x:Name="rdbHumidity" Content="Humidity" Grid.Column="2" HorizontalAlignment="Left" Margin="10,5,0,0" Grid.Row="4" VerticalAlignment="Center" Width="90" Height="20" FontSize="10" Grid.ColumnSpan="2"/>
         </Grid>
-        <TextBlock x:Name="txbValue" HorizontalAlignment="Left" Margin="66,67,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="201" TextAlignment="Right"/>
-        <TextBlock x:Name="txbInfo" HorizontalAlignment="Left" Margin="66,288,0,0" TextWrapping="Wrap" Text="Syötä arvo ja paina ok" VerticalAlignment="Top" Width="201" FontSize="10"/>
-        <TextBlock x:Name="txbTemperature" HorizontalAlignment="Left" Margin="319,166,0,0" TextWrapping="Wrap" Text="Temperature:" VerticalAlignment="Top" FontSize="20" Foreground="#FF003AFF" FontFamily="Monotype Corsiva"/>
-        <TextBlock x:Name="txbHumidity" HorizontalAlignment="Left" Margin="319,200,0,0" TextWrapping="Wrap" Text="Humidity:" VerticalAlignment="Top" FontSize="20" FontStyle="Italic" Foreground="#FF003AFF" FontFamily="Monotype Corsiva"/>
+        <TextBlock x:Name="txbValue" HorizontalAlignment="Left" Margin="62,48,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="200" TextAlignment="Right" Foreground="Black" Background="White" Height="20" FontSize="14"/>
+        <TextBlock x:Name="txbInfo" HorizontalAlignment="Left" Margin="62,280,0,0" TextWrapping="Wrap" Text="Syötä arvo ja paina ok" VerticalAlignment="Top" Width="201" FontSize="10"/>
+        <TextBlock x:Name="txbTemperature" HorizontalAlignment="Left" Margin="314,142,0,0" TextWrapping="Wrap" Text="Temperature:" VerticalAlignment="Top" FontSize="20" Foreground="#FF003AFF" FontFamily="Monotype Corsiva"/>
+        <TextBlock x:Name="txbHumidity" HorizontalAlignment="Left" Margin="314,176,0,0" TextWrapping="Wrap" Text="Humidity:" VerticalAlignment="Top" FontSize="20" FontStyle="Italic" Foreground="#FF003AFF" FontFamily="Monotype Corsiva"/>
         <TextBlock x:Name="txbHeater" HorizontalAlignment="Left" Margin="336,20,0,0" TextWrapping="Wrap" Text="Heater" VerticalAlignment="Top" FontSize="35" FontFamily="Papyrus" FontWeight="Bold" Foreground="#FFB40000"/>
         <TextBlock x:Name="txbUltimatum" HorizontalAlignment="Left" Margin="380,68,0,0" TextWrapping="Wrap" Text="Ultimatum" VerticalAlignment="Top" Foreground="#FFB40000" FontSize="17" FontFamily="Baskerville Old Face"/>
 
