@@ -113,7 +113,7 @@ namespace Labra_10___Tehtava_4
 
         private void btnDot_Click(object sender, RoutedEventArgs e)
         {
-            teksti += ".";
+            teksti += ",";
             txbValue.Text = teksti;
         }
 
