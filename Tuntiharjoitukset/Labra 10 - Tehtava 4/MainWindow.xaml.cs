@@ -150,7 +150,8 @@ namespace Labra_10___Tehtava_4
 
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                txbInfo.Text = "Tarkista syöte! Arvoa ei muutettu.";
+                teksti = "";
             }
         }
     }
