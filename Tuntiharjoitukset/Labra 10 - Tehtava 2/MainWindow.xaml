@@ -19,7 +19,6 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <TextBlock x:Name="txbLogin" Grid.Row="0" Grid.Column="0" Text="Login:" Margin="5" Height="20"/>
-            <!--<TextBlock x:Name="txbLogin" HorizontalAlignment="Left" Margin="5,5,0,5" TextWrapping="Wrap" Text="Login:" VerticalAlignment="Bottom" Height="20" Width="40"/>-->
             <TextBlock x:Name="txbPasswd" Grid.Row="1" Grid.Column="0" Text="Password:" Margin="5" Height="20"/>
             <Button x:Name="btnLogin" Content="Login" Grid.Row="2" Grid.Column="1" Margin="5"  Width="40" Height="20" Background="#FFA6AEB9" BorderThickness="0" Click="btnLogin_Click" HorizontalAlignment="Left"/>
             <TextBox x:Name="txtLogin" Grid.ColumnSpan="2" Grid.Row="0" Grid.Column="1" Height="20" Margin="5" Text="" Width="123" Background="#FFE7EFFB"/>
