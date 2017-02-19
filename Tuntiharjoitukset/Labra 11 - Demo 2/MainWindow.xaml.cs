@@ -84,16 +84,18 @@ namespace Labra_11___Demo_2
 
         private void btnCreateNew_Click(object sender, RoutedEventArgs e)
         {
-            txtJoukkueenNimi.Text = "Anna joukkueen nimi";
-            txtJoukkueenKaupunki.Text = "Anna kaupunki";
             btnSave.Visibility = System.Windows.Visibility.Visible;
+            txtUusiJoukkue.Visibility = System.Windows.Visibility.Visible;
+            txtUusiKaupunki.Visibility = System.Windows.Visibility.Visible;
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            joukkueet.Add(new HockeyTeam(txtJoukkueenNimi.Text, txtJoukkueenKaupunki.Text));
+            joukkueet.Add(new HockeyTeam(txtUusiJoukkue.Text, txtUusiKaupunki.Text));
             spRight.DataContext = joukkueet[counter];
             btnSave.Visibility = System.Windows.Visibility.Hidden;
+            txtUusiJoukkue.Visibility = System.Windows.Visibility.Hidden;
+            txtUusiKaupunki.Visibility = System.Windows.Visibility.Hidden;
         }
     }
 }
