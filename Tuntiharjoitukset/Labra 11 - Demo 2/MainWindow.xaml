@@ -48,14 +48,14 @@
                 <TextBlock x:Name="txb3" TextWrapping="Wrap" Text="Binding to Collection" Margin="20,20,0,0" Width="150" FontSize="13" VerticalAlignment="Center" TextDecorations="Underline"/>
                 <Button x:Name="btnBind" Content="Sido olio-kokoelmaan" Width="130" Margin="0,20,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Click="btnBind_Click"/>
                 <TextBlock x:Name="txb6" TextWrapping="Wrap" Text="JYP Jyväskylä" Margin="10,20,0,0" Width="100" HorizontalAlignment="Left"/>
-                <TextBox x:Name="txtJoukkueenNimi" Height="23" TextWrapping="Wrap" Text="{Binding Path=Name}" Width="150" Margin="0,10,0,0"/>
+                <TextBox x:Name="txtJoukkueenNimi" Height="23" TextWrapping="Wrap" Text="{Binding Path=Name}" Width="150" Margin="0,10,0,0" />
                 <TextBox x:Name="txtJoukkueenKaupunki" Height="23" TextWrapping="Wrap" Text="{Binding Path=City}" Width="150"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,0">
                     <Button x:Name="btnBack" Content="Edellinen" Width="60" Margin="0,0,20,0" Click="btnBack_Click"/>
                     <Button x:Name="btnForward" Content="Seuraava" Width="60" Click="btnForward_Click"/>
                 </StackPanel>
-                <Button x:Name="btnCreateNew" Content="Luo uusi" Width="70" Margin="0,10,0,0"/>
-
+                <Button x:Name="btnCreateNew" Content="Luo uusi" Width="70" Margin="0,10,0,0" Click="btnCreateNew_Click"/>
+                <Button x:Name="btnSave" Content="Tallenna" Visibility="Hidden" Width="70" Margin="0,10,0,0" Click="btnSave_Click"/>
             </StackPanel>
             
         </StackPanel>

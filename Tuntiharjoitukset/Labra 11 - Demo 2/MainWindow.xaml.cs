@@ -35,6 +35,7 @@ namespace Labra_11___Demo_2
         JAMK.ICT.HockeyLeague liiga;
         ObservableCollection<JAMK.ICT.HockeyTeam> joukkueet;
         int counter = 0;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -69,14 +70,30 @@ namespace Labra_11___Demo_2
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-            counter--;
+            if (counter > 0)
+            { counter--; }
             spRight.DataContext = joukkueet[counter];
         }
 
         private void btnForward_Click(object sender, RoutedEventArgs e)
         {
-            counter++;
+            if (counter < joukkueet.Count -1)
+            { counter++; } 
             spRight.DataContext = joukkueet[counter];
+        }
+
+        private void btnCreateNew_Click(object sender, RoutedEventArgs e)
+        {
+            txtJoukkueenNimi.Text = "Anna joukkueen nimi";
+            txtJoukkueenKaupunki.Text = "Anna kaupunki";
+            btnSave.Visibility = System.Windows.Visibility.Visible;
+        }
+
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+            joukkueet.Add(new HockeyTeam(txtJoukkueenNimi.Text, txtJoukkueenKaupunki.Text));
+            spRight.DataContext = joukkueet[counter];
+            btnSave.Visibility = System.Windows.Visibility.Hidden;
         }
     }
 }
