@@ -33,7 +33,7 @@ namespace Labra_11___Demo_2
         // Koska useampi metodi (= tapahtuman käsittelijä) tulee käyttämään näitä muuttujia -->
         // määritellään luokan tasolle
         JAMK.ICT.HockeyLeague liiga;
-        ObservableCollection<JAMK.ICT.HockeyTeam> joukkueet;
+        ObservableCollection<JAMK.ICT.HockeyTeam> joukkueet;        // Obs.coll. - osaa päivittää itseään automaattisesti
         int counter = 0;
 
         public MainWindow()
@@ -61,8 +61,8 @@ namespace Labra_11___Demo_2
         {
             // Määritellään Stackpanelin DataContext
             // Demo1: Datacontext = olio
-            //HockeyTeam tiimi = new HockeyTeam("KeuPa", "Keuruu");
-            //spRight.DataContext = tiimi;
+            // HockeyTeam tiimi = new HockeyTeam("KeuPa", "Keuruu");
+            // spRight.DataContext = tiimi;
 
             // Demo2 : Kytketään oliokokoelman 1. olioon
             spRight.DataContext = joukkueet[counter];
