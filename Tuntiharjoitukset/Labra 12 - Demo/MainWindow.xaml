@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Labra_12___Demo"
         xmlns:views="clr-namespace:Labra_12___Demo.View"
         mc:Ignorable="d"
-        Title="MVVM -Demo, Students" Height="350" Width="710">
+        Title="MVVM -Demo, Students" Height="350" Width="810">
     <Grid>
         <StackPanel Orientation="Horizontal" Background="Beige">
             <views:StudentView x:Name="StudentViewControl" Loaded="StudentViewControl_Loaded" Margin="10,10,0,0" />

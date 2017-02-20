@@ -31,11 +31,11 @@ namespace Labra_12___Demo.ViewModel
 
             // Lisätään esimerkin vuoksi muutama opiskelija, oikeassa sovelluksessa haettaisiin esiin tietokannasta
 
-            students.Add(new Student { FirstName = "Tanis", LastName = "Half-Elven" });
-            students.Add(new Student { FirstName = "Raistlin", LastName = "Majere" });
-            students.Add(new Student { FirstName = "Kitiara", LastName = "Uth Matar" });
-            students.Add(new Student { FirstName = "Sturm", LastName = "Brightblade" });
-            students.Add(new Student { FirstName = "Tasslehoff ", LastName = "Burrfoot" });
+            students.Add(new Student { FirstName = "Tanis", LastName = "Half-Elven", AsioID = "A1234" });
+            students.Add(new Student { FirstName = "Raistlin", LastName = "Majere", AsioID = "A1238" });
+            students.Add(new Student { FirstName = "Kitiara", LastName = "Uth Matar", AsioID = "A1134" });
+            students.Add(new Student { FirstName = "Sturm", LastName = "Brightblade", AsioID = "A1230" });
+            students.Add(new Student { FirstName = "Tasslehoff ", LastName = "Burrfoot", AsioID = "A2234" });
 
             Students = students;
         }

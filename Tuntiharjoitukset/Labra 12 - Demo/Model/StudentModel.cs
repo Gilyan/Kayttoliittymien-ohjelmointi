@@ -57,6 +57,8 @@ namespace Labra_12___Demo.Model
             }
         }
 
+        public string AsioID { get; set; }
+
         // Constructors
         // Methods
         // Events
