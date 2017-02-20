@@ -44,5 +44,18 @@ namespace Labra_12___Demo
         {
             dgStudents.DataContext = svmo.Students;
         }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            // Luodaan observablecollectioniin uusi Student-olio
+            Labra_12___Demo.Model.Student uusi = new Model.Student();
+            uusi.FirstName = txtFirstName.Text;
+            uusi.LastName = txtLastName.Text;
+            svmo.Students.Add(uusi);
+
+            // Tyhjätään textboxit
+            txtFirstName.Text = "";
+            txtLastName.Text = "";
+        }
     }
 }

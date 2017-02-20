@@ -6,11 +6,18 @@
         xmlns:local="clr-namespace:Labra_12___Demo"
         xmlns:views="clr-namespace:Labra_12___Demo.View"
         mc:Ignorable="d"
-        Title="MVVM -Demo, Students" Height="350" Width="525">
+        Title="MVVM -Demo, Students" Height="350" Width="710">
     <Grid>
         <StackPanel Orientation="Horizontal" Background="Beige">
-            <views:StudentView x:Name="StudentViewControl" Loaded="StudentViewControl_Loaded" />
-            <DataGrid x:Name="dgStudents" ItemsSource="{Binding}" Loaded="dgStudents_Loaded" />
+            <views:StudentView x:Name="StudentViewControl" Loaded="StudentViewControl_Loaded" Margin="10,10,0,0" />
+            <DataGrid x:Name="dgStudents" ItemsSource="{Binding}" Loaded="dgStudents_Loaded" Margin="0,10,0,0" />
+
+            <StackPanel>
+                <TextBox x:Name="txtFirstName" Width="150" Margin="10,10,0,0" />
+                <TextBox x:Name="txtLastName" Width="150" Margin="10,10,0,0" />
+                <Button x:Name="btnAdd" Content="Lisää" Width="150" Click="btnAdd_Click" Margin="10,10,0,0" />
+            </StackPanel>
+            
         </StackPanel>
         
     </Grid>

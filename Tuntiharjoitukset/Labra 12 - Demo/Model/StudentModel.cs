@@ -8,20 +8,29 @@ Minttu Mäkäläinen K8517 @ JAMK
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Labra_12___Demo.Model
 {
-    public class Student
+    public class Student : INotifyPropertyChanged
     {
         private string firstname;
 
         public string FirstName
         {
             get { return firstname; }
-            set { firstname = value; }
+            set
+            {
+                if (firstname != value)
+                {
+                    firstname = value;
+                    RaisePropertyChanged("FirstName");
+                    RaisePropertyChanged("FullName");
+                }
+            }
         }
 
         private string lastname;
@@ -29,7 +38,15 @@ namespace Labra_12___Demo.Model
         public string LastName
         {
             get { return lastname; }
-            set { lastname = value; }
+            set
+            {
+                if (lastname != value)
+                {
+                    lastname = value;
+                    RaisePropertyChanged("LastName");
+                    RaisePropertyChanged("FullName");
+                }
+            }
         }
 
         public string FullName
@@ -37,6 +54,19 @@ namespace Labra_12___Demo.Model
             get
             {
                 return firstname + " " + lastname;
+            }
+        }
+
+        // Constructors
+        // Methods
+        // Events
+
+        public event PropertyChangedEventHandler PropertyChanged;       // Event
+        private void RaisePropertyChanged(string property)              // Metodi
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(property));
             }
         }
     }
