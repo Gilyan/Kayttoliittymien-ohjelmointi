@@ -1,5 +1,6 @@
 ﻿/* **************************************
-Tuntidemo, MVVM -harjoittelua.
+Tuntidemo, MVVM -harjoittelua. 
+22.2. lisätty myös MySQL-tietokannan käyttöönottoharjoitus.
 
 Luotu 20.2.2017
 
@@ -33,6 +34,15 @@ namespace Labra_12___Demo
         {
             InitializeComponent();
             svmo.LoadStudents();
+
+            try
+            {
+                svmo.LoadStudentsFromMysql();       // Oppilaat tietokannasta
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void StudentViewControl_Loaded(object sender, RoutedEventArgs e)
