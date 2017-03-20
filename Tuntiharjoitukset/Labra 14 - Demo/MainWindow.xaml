@@ -7,6 +7,12 @@
         mc:Ignorable="d"
         Title="Demo" Height="350" Width="525">
     <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFB92323" Offset="0"/>
+                <GradientStop Color="#FFE6BCBC" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <StackPanel>
             <Button x:Name="btnWork" Content="Do Long Work" Width="100" Margin="10,10,0,0" HorizontalAlignment="Left" Click="btnWork_Click"/>
             <Button x:Name="btnFire" Content="Fire!" Width="100" Margin="10,10,0,0" HorizontalAlignment="Left" Click="btnFire_Click"/>
