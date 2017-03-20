@@ -14,6 +14,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;             // Säiettä varten
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -33,6 +34,7 @@ namespace Labra_14___Demo_2
     public partial class MainWindow : Window
     {
         List<Train> trains = new List<Train>();
+        string selectedStation = "";
         public MainWindow()
         {
             InitializeComponent();
@@ -62,12 +64,36 @@ namespace Labra_14___Demo_2
 
         private void GetTrainsAt()
         {
-            // Haetaan asemalta lähtevät junat
-            string st = cbStations.SelectedValue.ToString();
-            trains = JAMK.IT.TrainsVM.GetTrainsAt(st);
-            dgTrains.DataContext = trains;
-            tbMessage.Text = string.Format("Löytyi {0} junaa", trains.Count);
+            try
+            {
+                // Haetaan asemalta lähtevät junat
+                string st = cbStations.SelectedValue.ToString();
+                trains = JAMK.IT.TrainsVM.GetTrainsAt(st);
+                dgTrains.DataContext = trains;
+                tbMessage.Text = string.Format("Löytyi {0} junaa", trains.Count);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
+        private void GetTrainsAtAsync()
+        {
+            // Huom. Eri säikeessä ajettava metodi, EI VOI käsitellä käyttöliittymää,
+            // mutta muuttujia voi
+            trains = JAMK.IT.TrainsVM.GetTrainsAt(selectedStation);
+            updateUI();
+        }
+
+        private void updateUI()
+        {
+            Action action = () =>
+            {
+                dgTrains.DataContext = trains;
+                tbMessage.Text = string.Format("Löytyi {0} junaa.", trains.Count);
+            };
+            Dispatcher.BeginInvoke(action);
         }
         #endregion
 
@@ -76,8 +102,13 @@ namespace Labra_14___Demo_2
             if (cbStations.SelectedValue != null)
             {
                 // V1: Alkuperäinen
-                tbMessage.Text = "Haetaan junat...";
-                GetTrainsAt();
+                //tbMessage.Text = "Haetaan junat...";
+                //GetTrainsAt();
+
+                // V2: Asynkroninen omassa säikeessä
+                selectedStation = cbStations.SelectedValue.ToString();
+                new Thread(GetTrainsAtAsync).Start();
+                tbMessage.Text = "Haetaan junia, odota hetki...";
             }
         }
     }
