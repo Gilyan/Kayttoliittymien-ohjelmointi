@@ -61,6 +61,7 @@ namespace Labra_14___Demo
                 txtMessage.Text = msg;
                 //btnFire.IsEnabled = false;
             };
+            // Suorittaa annetun delegaatin asynkronisesti siinä säikeessä, mihin Dispatcher liittyy
             Dispatcher.BeginInvoke(action);
         }
 
