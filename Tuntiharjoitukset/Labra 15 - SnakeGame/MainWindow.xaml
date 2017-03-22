@@ -1,0 +1,18 @@
+﻿<Window x:Class="Labra_15___SnakeGame.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Labra_15___SnakeGame"
+        mc:Ignorable="d"
+        Title="Sssnakesss" Height="350" Width="200" ResizeMode="NoResize" >
+    <Grid>
+        <StackPanel>
+            <Image Source="Resources/snake.jpg" Margin="0,10,0,0" />
+            <!-- <Image Source="Resources/ekans.png" Margin="10,10,10,0" /> -->
+            <Button x:Name="btnPlay" Content="Play" Width="100" VerticalAlignment="Center" Margin="0,10,0,0" Click="btnPlay_Click"/>
+            <Button x:Name="btnExit" Content="Exit" Width="100" VerticalAlignment="Center" Margin="0,10,0,0" Click="btnExit_Click"/>
+
+        </StackPanel>
+    </Grid>
+</Window>
