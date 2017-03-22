@@ -234,7 +234,7 @@ namespace Labra_15___SnakeGame
             txtMessage.Text = "GAME OVER\nYour score: " + score + "\npress ESC to quit";
             paintCanvas.Children.Add(txtMessage);
 
-            // Animaatio, joka siirtää kanvaasia
+            // Animaatio, joka siirtää kanvaasia - JOSTAIN SYYSTÄ MADON TÖRMÄYS KAATAA OHJELMAN
             var trs = new TranslateTransform();
             var anim = new DoubleAnimation(0, 620, TimeSpan.FromSeconds(15));
             trs.BeginAnimation(TranslateTransform.XProperty, anim);
