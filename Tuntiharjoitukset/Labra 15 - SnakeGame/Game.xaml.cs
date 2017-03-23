@@ -224,9 +224,9 @@ namespace Labra_15___SnakeGame
         private void GameOver()
         {
             timer.Stop();
-            // MessageBox.Show("Your score: " + score);
-            // this.Close();
-            GameOverShow();         // Kutsutaan animaatio
+            MessageBox.Show("Your score: " + score);
+            this.Close();
+            // GameOverShow();         // Kutsutaan animaatio
         }
 
         private void GameOverShow()
