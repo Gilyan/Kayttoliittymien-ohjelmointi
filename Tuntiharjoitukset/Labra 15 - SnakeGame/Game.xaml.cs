@@ -81,8 +81,8 @@ namespace Labra_15___SnakeGame
         private void PaintBonus(int index)      // Mikä omena syötiin
         {
             // Arvotaan omenalle piste, eli x- ja y- koordinaatit
-            Point point = new Point(rnd.Next(minimi, maxWidth), 
-                                    rnd.Next(minimi, maxHeight));
+            Point point = new Point(rnd.Next(minimi, (maxWidth - 10)), 
+                                    rnd.Next(minimi, (maxHeight - 10)));
 
             // Omenan piirtäminen
             Ellipse omena = new Ellipse();
@@ -232,9 +232,9 @@ namespace Labra_15___SnakeGame
         private void GameOverShow()
         {
             txtMessage.Text = "GAME OVER\nYour score: " + score + "\npress ESC to quit";
-            paintCanvas.Children.Add(txtMessage);
+            //paintCanvas.Children.Add(txtMessage); - JOSTAIN SYYSTÄ MADON TÖRMÄYS KAATAA OHJELMAN
 
-            // Animaatio, joka siirtää kanvaasia - JOSTAIN SYYSTÄ MADON TÖRMÄYS KAATAA OHJELMAN
+            // Animaatio, joka siirtää kanvaasia
             var trs = new TranslateTransform();
             var anim = new DoubleAnimation(0, 620, TimeSpan.FromSeconds(15));
             trs.BeginAnimation(TranslateTransform.XProperty, anim);
