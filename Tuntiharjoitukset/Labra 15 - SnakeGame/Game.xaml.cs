@@ -179,8 +179,8 @@ namespace Labra_15___SnakeGame
             // TÖRMÄYSTARKASTELUT
 
             // Törmäystarkastelu #1: Tarkistetaan, onko käärme kanvaasilla
-            if ((currentPosition.X > maxWidth) || (currentPosition.X < minimi) ||
-                (currentPosition.Y > maxHeight) || (currentPosition.Y < minimi))
+            if ((currentPosition.X > (maxWidth - 10)) || (currentPosition.X < minimi) ||
+                (currentPosition.Y > (maxHeight - 10)) || (currentPosition.Y < minimi))
                 GameOver();
 
             // Törmäystarkastelu #2: Tarkistetaan, ettei käärme pure omaa häntäänsä
@@ -224,22 +224,30 @@ namespace Labra_15___SnakeGame
         private void GameOver()
         {
             timer.Stop();
-            MessageBox.Show("Your score: " + score);
-            this.Close();
-            // GameOverShow();         // Kutsutaan animaatio
+            //MessageBox.Show("Your score: " + score);      // JÄÄ TOISINAAN JUMITTAMAAN
+            //this.Close();
+            paintCanvas.Children.Remove(txtMessage);        // Tyhjennetään teksti, ettei ohjelma kaadu
+            GameOverShow();         // Kutsutaan animaatio
         }
 
         private void GameOverShow()
         {
-            txtMessage.Text = "GAME OVER\nYour score: " + score + "\npress ESC to quit";
-            //paintCanvas.Children.Add(txtMessage); - JOSTAIN SYYSTÄ MADON TÖRMÄYS KAATAA OHJELMAN
+            try
+            {
+                txtMessage.Text = "GAME OVER\nYour score: " + score + "\npress ESC to quit";
+                paintCanvas.Children.Add(txtMessage);
 
-            // Animaatio, joka siirtää kanvaasia
-            var trs = new TranslateTransform();
-            var anim = new DoubleAnimation(0, 620, TimeSpan.FromSeconds(15));
-            trs.BeginAnimation(TranslateTransform.XProperty, anim);
-            trs.BeginAnimation(TranslateTransform.YProperty, anim);
-            paintCanvas.RenderTransform = trs;
+                // Animaatio, joka siirtää kanvaasia
+                var trs = new TranslateTransform();
+                var anim = new DoubleAnimation(0, 620, TimeSpan.FromSeconds(15));
+                trs.BeginAnimation(TranslateTransform.XProperty, anim);
+                trs.BeginAnimation(TranslateTransform.YProperty, anim);
+                paintCanvas.RenderTransform = trs;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
